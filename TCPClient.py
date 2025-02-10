@@ -28,7 +28,7 @@ def start_client():
                 else:
                     with open(file_name, "wb") as file:
                         file.write(response.encode())
-                    print(f"The File {file_name}.")
+                    print(f"The File {file_name}.") #remove encode here because response is already in binary when recieving a file 
             else:
                print(f"Server: {response}") #receiving the server response at a maximum of 1024 bytes and printing it
 
