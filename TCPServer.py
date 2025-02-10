@@ -90,6 +90,9 @@ def handle_client(client_socket, client_name, client_address):
         # find out the disconnection time then save it
         with lock:
             clients[client_name]['disconnected_at'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            #global client_count 
+            #client_count-=1
+            # add this because we need to account for clients leaving towards the max_client amount
 
         client_socket.close()
         #print(f"{client_name} disconnected.") #closing the client socket i dont think we need this it doubles the message
